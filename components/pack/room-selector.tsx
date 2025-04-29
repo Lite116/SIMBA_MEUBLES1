@@ -40,9 +40,18 @@ export function RoomSelector({
             key={option.id} 
             className={cn(
               "relative transition-all duration-200 hover:shadow-md",
-              isSelected && "ring-2 ring-[#FE6022] ring-offset-2"
+              isSelected && "ring-2 ring-[#FE6022] ring-offset-2",
+              'available' in option && option.available === false && "opacity-75"
             )}
           >
+            {'available' in option && option.available === false && (
+              <Badge 
+                className="absolute top-4 right-4 z-10 bg-red-500"
+                variant="secondary"
+              >
+                Non disponible
+              </Badge>
+            )}
             {isSelected && (
               <Badge 
                 className="absolute top-4 right-4 z-10 bg-[#FE6022]"
@@ -62,7 +71,8 @@ export function RoomSelector({
                   fill
                   className={cn(
                     "object-cover transition-transform duration-500 group-hover:scale-105",
-                    isSelected && "scale-105"
+                    isSelected && "scale-105",
+                    'available' in option && option.available === false && "grayscale"
                   )}
                 />
                 <div className={cn(
@@ -74,12 +84,16 @@ export function RoomSelector({
                 {option.description}
               </p>
               <div className="pt-2 flex justify-center">
-                <QuantityControls
-                  quantity={quantity}
-                  onIncrease={() => onSelect(option.id, quantity + 1)}
-                  onDecrease={() => onSelect(option.id, quantity - 1)}
-                  maxQuantity={Math.min(maxSelections, quantity + remainingSelections)}
-                />
+                {!('available' in option) || option.available !== false ? (
+                  <QuantityControls
+                    quantity={quantity}
+                    onIncrease={() => onSelect(option.id, quantity + 1)}
+                    onDecrease={() => onSelect(option.id, quantity - 1)}
+                    maxQuantity={Math.min(maxSelections, quantity + remainingSelections)}
+                  />
+                ) : (
+                  <p className="text-sm text-red-500 font-medium">Cette option n&apos;est pas disponible actuellement</p>
+                )}
               </div>
             </CardContent>
           </Card>

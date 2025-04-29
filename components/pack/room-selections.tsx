@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Pack, Room } from '@/lib/types';
+import { Pack, Room, PackOption } from '@/lib/types';
 import { ROOM_OPTIONS } from '@/lib/pack-options';
 import { RoomSelector } from './room-selector';
 import { Button } from '@/components/ui/button';
