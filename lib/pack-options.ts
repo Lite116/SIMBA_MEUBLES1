@@ -1,4 +1,4 @@
-import { RoomOptions } from './types';
+import { RoomOptions, PackOption } from './types/index';
 
 export const ROOM_OPTIONS: RoomOptions = {
   salon: [
@@ -87,8 +87,9 @@ export const ROOM_OPTIONS: RoomOptions = {
       id: 'chambre-2',
       name: 'Chambre 2',
       description: 'Chambre standard avec mobilier de base',
-      image: '/images/chambres/c2.jpg',
+      image: '/images/cross.png',
       price: 0,
+      available: false,
     },
     {
       id: 'chambre-3',

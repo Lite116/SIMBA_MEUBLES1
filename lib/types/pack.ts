@@ -15,6 +15,7 @@ export interface PackOption {
   description: string;
   image: string;
   price: number;
+  available?: boolean;
 }
 
 export type RoomOptions = Record<Room, PackOption[]>;
