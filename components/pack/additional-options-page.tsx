@@ -17,7 +17,7 @@ interface AdditionalOptionsPageProps {
 export function AdditionalOptionsPage({ pack, selections }: AdditionalOptionsPageProps) {
   const router = useRouter();
   const [additionalSelections, setAdditionalSelections] = useState<AdditionalSelection[]>([]);
-  const packType = pack.name === 'Pack Duo' ? 'duo' : 'trio';
+  const packType = pack.name === 'Pack Duo' ? 'duo' : 'trio'; 
 
   const handleNext = () => {
     const params = new URLSearchParams();
