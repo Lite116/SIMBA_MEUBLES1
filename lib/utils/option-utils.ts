@@ -1,10 +1,11 @@
 import { ROOM_OPTIONS } from '@/lib/pack-options';
 import { ADDITIONAL_OPTIONS } from '@/lib/constants/additional-options';
+import { Room } from '@/lib/types';
 
 export function getOptionNameById(id: string): string | null {
   // Check room options
   for (const room in ROOM_OPTIONS) {
-    const option = ROOM_OPTIONS[room].find((opt: { id: string }) => opt.id === id);
+    const option = ROOM_OPTIONS[room as Room].find((opt: { id: string }) => opt.id === id);
     if (option) return option.name;
   }
 
@@ -20,7 +21,7 @@ export function getOptionNameById(id: string): string | null {
 export function getOptionPriceById(id: string): number | null {
   // Check room options (assuming room options have no additional price)
   for (const room in ROOM_OPTIONS) {
-    const option = ROOM_OPTIONS[room].find((opt: { id: string }) => opt.id === id);
+    const option = ROOM_OPTIONS[room as Room].find((opt: { id: string }) => opt.id === id);
     if (option) return option.price;
   }
 
