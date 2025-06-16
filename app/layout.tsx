@@ -7,6 +7,7 @@ import { PackProvider } from '@/lib/contexts/pack-context';
 import AosProvider from '@/components/providers/aos-provider';
 import { CookieBanner } from '@/components/cookie/cookie-banner';
 import { SocialButtons } from '@/components/ui/social-buttons';
+import { MetaPixel } from '@/components/providers/meta-pixel';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
             <Footer />
             <CookieBanner />
             <SocialButtons />
+            <MetaPixel />
           </AosProvider>
         </PackProvider>
       </body>
