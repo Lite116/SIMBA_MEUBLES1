@@ -11,6 +11,7 @@ import { MetaPixel } from '@/components/providers/meta-pixel';
 import { PromoBanner } from '@/components/layout/promo-banner';
 import { Header } from '@/components/layout/header';
 import { PromoBannerProvider } from '@/components/layout/promo-banner-context';
+import { SalePopup } from '@/components/ui/SalePopup';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-full">
       <body className={`${inter.className} h-full flex flex-col`}>
+        <SalePopup />
         <PackProvider>
           <AosProvider>
             <PromoBannerProvider>
