@@ -22,7 +22,7 @@ export const ADDITIONAL_OPTIONS: Record<string, AdditionalOptionCategory> = {
         name: 'Matelas Pack Trio',
         description: 'Matelas confortable pour votre lit',
         image: '',
-        price: 450, // 15€ x 30 mois
+        price: 510, // 17€ x 30 mois
         category: 'mattresses',
         packType: 'trio'
       },
@@ -31,7 +31,7 @@ export const ADDITIONAL_OPTIONS: Record<string, AdditionalOptionCategory> = {
         name: 'Matelas Pack Duo',
         description: 'Matelas confortable pour votre lit',
         image: '',
-        price: 600, // 20€ x 30 mois
+        price: 510, // 21.25€ x 24 mois
         category: 'mattresses',
         packType: 'duo'
       },
@@ -54,7 +54,7 @@ export const ADDITIONAL_OPTIONS: Record<string, AdditionalOptionCategory> = {
         name: 'Sommier Pack Duo',
         description: 'Sommier adapté à votre matelas',
         image: '',
-        price: 300, // 10€ x 30 mois
+        price: 240, // 10€ x 24 mois
         category: 'bedBases',
         packType: 'duo'
       },
@@ -77,7 +77,7 @@ export const ADDITIONAL_OPTIONS: Record<string, AdditionalOptionCategory> = {
         name: '4 Chaises Pack Duo',
         description: 'Lot de 4 chaises assorties',
         image: '',
-        price: 600, // 20€ x 30 mois
+        price: 450, // 18.75€ x 24 mois
         category: 'chairs',
         packType: 'duo'
       },

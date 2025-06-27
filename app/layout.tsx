@@ -8,6 +8,9 @@ import AosProvider from '@/components/providers/aos-provider';
 import { CookieBanner } from '@/components/cookie/cookie-banner';
 import { SocialButtons } from '@/components/ui/social-buttons';
 import { MetaPixel } from '@/components/providers/meta-pixel';
+import { PromoBanner } from '@/components/layout/promo-banner';
+import { Header } from '@/components/layout/header';
+import { PromoBannerProvider } from '@/components/layout/promo-banner-context';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,9 +30,13 @@ export default function RootLayout({
       <body className={`${inter.className} h-full flex flex-col`}>
         <PackProvider>
           <AosProvider>
-            <div className="flex-1">
-              {children}
-            </div>
+            <PromoBannerProvider>
+              <PromoBanner />
+              <Header />
+              <div className="flex-1">
+                {children}
+              </div>
+            </PromoBannerProvider>
             <Footer />
             <CookieBanner />
             <SocialButtons />

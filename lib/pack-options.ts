@@ -15,6 +15,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon avec canapé et fauteuils',
       image: '/images/salons/s2.jpg',
       price: 0,
+      available: false,
     },
     {
       id: 'salon-3',
@@ -22,6 +23,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon confortable et fonctionnel',
       image: '/images/salons/s4.jpg',
       price: 0,
+      available: false,
     },
     {
       id: 'salon-4',
@@ -29,6 +31,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon avec équipement standard',
       image: '/images/salons/s5.jpg',
       price: 0,
+      available: false,
     },
     {
       id: 'salon-5',
@@ -143,7 +146,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       id: 'chambre-2',
       name: 'Chambre 2',
       description: 'Chambre standard avec mobilier de base',
-      image: '/images/chambres/c2.jpg',
+      image: '/images/chambres/chambre2.jpg',
       price: 0,
       //available: false,
     },
@@ -151,14 +154,14 @@ export const ROOM_OPTIONS: RoomOptions = {
       id: 'chambre-3',
       name: 'Chambre 3',
       description: 'Chambre avec espace de couchage et rangement',
-      image: '/images/chambres/c3.png',
+      image: '/images/chambres/chambre3.jpg',
       price: 0,
     },
     {
       id: 'chambre-4',
       name: 'Chambre 4',
       description: 'Chambre fonctionnelle et pratique',
-      image: '/images/chambres/c4.png',
+      image: '/images/chambres/chambre4.jpg',
       price: 0,
     },
   ]
