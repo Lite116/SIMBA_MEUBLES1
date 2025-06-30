@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: SITE_CONFIG.name,
   description: SITE_CONFIG.description,
   icons: SITE_CONFIG.icons,
+  other: SITE_CONFIG.other,
 };
 
 export default function RootLayout({

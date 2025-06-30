@@ -22,4 +22,7 @@ export const SITE_CONFIG = {
   icons: {
     icon: '/logo.png',
   },
+  other: {
+    'google-site-verification': '692ZM2eIwQ068PeJF4xW91rO2DHIH-axL_qm5NJJjVE',
+  },
 };
