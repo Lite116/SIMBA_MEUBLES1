@@ -29,11 +29,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-full">
       <body className={`${inter.className} h-full flex flex-col`}>
-        {/* <SalePopup /> */}
+        <SalePopup />
         <PackProvider>
           <AosProvider>
             <PromoBannerProvider>
-              {/* <PromoBanner /> */}
+              <PromoBanner />
               <Header />
               <div className="flex-1">
                 {children}
