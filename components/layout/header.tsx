@@ -6,11 +6,9 @@ import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { usePromoBanner } from './promo-banner-context';
 
 export function Header() {
   const pathname = usePathname();
-  const { visible: promoVisible } = usePromoBanner();
   
   const navigation = [
     { name: 'Accueil', href: '/' },
@@ -41,7 +39,7 @@ export function Header() {
   };
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b transition-all", promoVisible && "mt-10")}> 
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b transition-all"> 
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex h-14 sm:h-16 items-center justify-between">
           <div className="flex items-center">
