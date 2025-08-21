@@ -1,12 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { Check } from 'lucide-react';
-import { AdditionalOption, AdditionalSelection } from '@/lib/types/additional-options';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { AdditionalSelection } from '@/lib/types/additional-options';
+import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ADDITIONAL_OPTIONS } from '@/lib/constants/additional-options';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
 import { QuantityControls } from './quantity-controls';
 
@@ -71,69 +69,56 @@ export function AdditionalOptions({
 
   return (
     <div className="space-y-8">
-       <Tabs defaultValue="mattresses" className="w-full">
-        <TabsList className="mb-6 w-full flex flex-wrap gap-2 h-auto">
-          {Object.entries(otherOptions).map(([key, category]) => (
-            <TabsTrigger 
-              key={key} 
-              value={key}
-              className="flex-grow sm:flex-grow-0"
-            >
-              {category.name}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+      {Object.entries(otherOptions).map(([key, category]) => (
+        <div key={key}>
+          <h3 className="text-lg font-semibold mb-4">{category.name}</h3>
+          <div className="grid grid-cols-1 sm:[grid-template-columns:repeat(auto-fit,minmax(220px,1fr))] gap-4">
+            {category.items.map((option) => {
+              const quantity = getQuantity(option.id);
+              const isSelected = quantity > 0;
+              const monthlyPrice = Math.round((option.price / duration) * 100) / 100;
 
-        {Object.entries(otherOptions).map(([key, category]) => (
-          <TabsContent key={key} value={key}>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {category.items.map((option) => {
-                const quantity = getQuantity(option.id);
-                const isSelected = quantity > 0;
-                const monthlyPrice = Math.round((option.price / duration) * 100) / 100;
-                
-                return (
-                  <Card 
-                    key={option.id} 
-                    className={cn(
-                      "relative transition-all duration-200 hover:shadow-md",
-                      isSelected && "ring-2 ring-[#FE6022] ring-offset-2"
-                    )}
-                  >
-                    {isSelected && (
-                      <Badge 
-                        className="absolute top-3 right-3 z-10 bg-[#FE6022]"
-                        variant="secondary"
-                      >
-                        {quantity}x
-                      </Badge>
-                    )}
-                    <CardContent className="p-4 space-y-3">
-                      <div className="space-y-2">
-                        <h3 className="text-base font-semibold">{option.name}</h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          {option.description}
-                        </p>
-                        <p className="text-sm font-medium">
-                          {monthlyPrice}€/mois
-                        </p>
-                        <div className="pt-1 flex justify-center">
-                          <QuantityControls
-                            quantity={quantity}
-                            onIncrease={() => handleQuantityChange(option.id, quantity + 1)}
-                            onDecrease={() => handleQuantityChange(option.id, quantity - 1)}
-                            maxQuantity={10}
-                          />
-                        </div>
+              return (
+                <Card 
+                  key={option.id} 
+                  className={cn(
+                    "relative transition-all duration-200 hover:shadow-md",
+                    isSelected && "ring-2 ring-[#FE6022] ring-offset-2"
+                  )}
+                >
+                  {isSelected && (
+                    <Badge 
+                      className="absolute top-3 right-3 z-10 bg-[#FE6022]"
+                      variant="secondary"
+                    >
+                      {quantity}x
+                    </Badge>
+                  )}
+                  <CardContent className="p-4 space-y-3">
+                    <div className="space-y-2">
+                      <h3 className="text-base font-semibold">{option.name}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {option.description}
+                      </p>
+                      <p className="text-sm font-medium">
+                        {monthlyPrice}€/mois
+                      </p>
+                      <div className="pt-1 flex justify-center">
+                        <QuantityControls
+                          quantity={quantity}
+                          onIncrease={() => handleQuantityChange(option.id, quantity + 1)}
+                          onDecrease={() => handleQuantityChange(option.id, quantity - 1)}
+                          maxQuantity={10}
+                        />
                       </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </TabsContent>
-        ))}
-      </Tabs>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      ))}
 
       {/* Delivery options section */}
       {delivery && (
