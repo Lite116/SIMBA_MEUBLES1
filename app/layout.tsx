@@ -8,6 +8,7 @@ import AosProvider from '@/components/providers/aos-provider';
 import { CookieBanner } from '@/components/cookie/cookie-banner';
 import { SocialButtons } from '@/components/ui/social-buttons';
 import { MetaPixel } from '@/components/providers/meta-pixel';
+import { Analytics } from '@vercel/analytics/react';
 // import { PromoBanner } from '@/components/layout/promo-banner';
 import { Header } from '@/components/layout/header';
 // import { PromoBannerProvider } from '@/components/layout/promo-banner-context';
@@ -44,6 +45,7 @@ export default function RootLayout({
             <CookieBanner />
             <SocialButtons />
             <MetaPixel />
+            <Analytics />
           </AosProvider>
         </PackProvider>
       </body>
