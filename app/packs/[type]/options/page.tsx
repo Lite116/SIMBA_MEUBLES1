@@ -9,14 +9,16 @@ export function generateStaticParams() {
   return generatePackTypeParams();
 }
 
-export default function PackOptionsPage({
+export default async function PackOptionsPage({
   params,
   searchParams,
 }: {
-  params: { type: string };
-  searchParams: { [key: string]: string };
+  params: Promise<{ type: string }>;
+  searchParams: Promise<{ [key: string]: string }>;
 }) {
-  const packType = params.type as PackType;
+  const { type } = await params;
+  const resolvedSearchParams = await searchParams;
+  const packType = type as PackType;
   const pack = SITE_CONFIG.packs[packType];
 
   if (!pack) {
@@ -31,7 +33,7 @@ export default function PackOptionsPage({
           <h1 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">
             Personnalisez votre {pack.name}
           </h1>
-          <AdditionalOptionsPage pack={pack} selections={searchParams} />
+          <AdditionalOptionsPage pack={pack} selections={resolvedSearchParams} />
         </div>
       </div>
     </main>

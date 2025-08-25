@@ -10,14 +10,16 @@ export function generateStaticParams() {
   return generatePackTypeParams();
 }
 
-export default function ContactPage({
+export default async function ContactPage({
   params,
   searchParams,
 }: {
-  params: { type: string };
-  searchParams: { [key: string]: string };
+  params: Promise<{ type: string }>;
+  searchParams: Promise<{ [key: string]: string }>;
 }) {
-  const packType = params.type as PackType;
+  const { type } = await params;
+  const resolvedSearchParams = await searchParams;
+  const packType = type as PackType;
   const pack = SITE_CONFIG.packs[packType];
 
   if (!pack) {
@@ -25,7 +27,7 @@ export default function ContactPage({
   }
 
   // Parse selections from URL
-  const { roomSelections } = parseSelections(searchParams);
+  const { roomSelections } = parseSelections(resolvedSearchParams);
 
   // Redirect if no selections are present
   if (roomSelections.length === 0) {

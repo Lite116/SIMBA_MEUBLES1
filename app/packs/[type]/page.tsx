@@ -9,12 +9,13 @@ export function generateStaticParams() {
   return generatePackTypeParams();
 }
 
-export default function PackConfigPage({
+export default async function PackConfigPage({
   params,
 }: {
-  params: { type: string };
+  params: Promise<{ type: string }>;
 }) {
-  const packType = params.type as PackType;
+  const { type } = await params;
+  const packType = type as PackType;
   const pack = SITE_CONFIG.packs[packType];
 
   if (!pack) {

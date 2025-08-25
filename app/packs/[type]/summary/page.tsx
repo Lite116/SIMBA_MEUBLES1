@@ -10,21 +10,23 @@ export function generateStaticParams() {
   return generatePackTypeParams();
 }
 
-export default function SummaryPage({
+export default async function SummaryPage({
   params,
   searchParams,
 }: {
-  params: { type: string };
-  searchParams: { [key: string]: string };
+  params: Promise<{ type: string }>;
+  searchParams: Promise<{ [key: string]: string }>;
 }) {
-  const packType = params.type as PackType;
+  const { type } = await params;
+  const resolvedSearchParams = await searchParams;
+  const packType = type as PackType;
   const pack = SITE_CONFIG.packs[packType];
 
   if (!pack) {
     notFound();
   }
 
-  const { roomSelections, additionalSelections } = parseSelections(searchParams);
+  const { roomSelections, additionalSelections } = parseSelections(resolvedSearchParams);
 
   return (
     <main>
