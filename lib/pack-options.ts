@@ -36,7 +36,6 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s6.jpg',
       price: 0,
-      available: false,
     },
     {
       id: 'salon-6',
@@ -65,7 +64,6 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s10.jpg',
       price: 0,
-      available: false,
     },
     {
       id: 'salon-10',
@@ -73,6 +71,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s11.jpg',
       price: 0,
+      available: false,
     },
     {
       id: 'salon-11',
@@ -94,6 +93,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s14.jpg',
       price: 0,
+      available: false,
     },
   ],
   'salle-a-manger': [
@@ -124,6 +124,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salle à manger avec ensemble table',
       image: '/images/salle-a-manger/sam4.jpg',
       price: 0,
+      available: false,
     },
     {
       id: 'sam-5',

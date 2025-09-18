@@ -3,6 +3,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  outputFileTracingRoot: __dirname,
   env: {
     NEXT_PUBLIC_WEBHOOK_URL: process.env.NEXT_PUBLIC_WEBHOOK_URL,
   },
