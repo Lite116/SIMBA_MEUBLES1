@@ -20,6 +20,14 @@ export const metadata: Metadata = {
   other: SITE_CONFIG.other,
 };
 
+export function generateViewport() {
+  return {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  };
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -27,6 +35,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="h-full" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      </head>
       <body className={`${inter.className} h-full flex flex-col`}>
         <PackProvider>
           <Header />

@@ -5,7 +5,7 @@ export function MetaPixel() {
     <>
       <Script
         id="meta-pixel"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
