@@ -29,8 +29,10 @@ const images = [
 
 export function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 5000);
@@ -46,7 +48,9 @@ export function Hero() {
           key={image.src}
           className={cn(
             "absolute inset-0 -z-10 transition-opacity duration-1000",
-            index === currentImage ? "opacity-100" : "opacity-0"
+            // Pendant l'hydratation, afficher seulement la première image
+            !isClient && index !== 0 ? "opacity-0" :
+            isClient && index === currentImage ? "opacity-100" : "opacity-0"
           )}
         >
           <Image
@@ -91,19 +95,21 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Carousel Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            className={cn(
-              "w-2 h-2 rounded-full transition-all duration-300",
-              index === currentImage ? "bg-white w-8" : "bg-white/50 hover:bg-white/75"
-            )}
-            onClick={() => setCurrentImage(index)}
-          />
-        ))}
-      </div>
+      {/* Carousel Indicators - Only show after client hydration */}
+      {isClient && (
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={cn(
+                "w-2 h-2 rounded-full transition-all duration-300",
+                index === currentImage ? "bg-white w-8" : "bg-white/50 hover:bg-white/75"
+              )}
+              onClick={() => setCurrentImage(index)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
