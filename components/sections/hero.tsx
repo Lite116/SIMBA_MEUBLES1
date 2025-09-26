@@ -8,19 +8,19 @@ import { cn } from '@/lib/utils';
 
 const images = [
   {
-    src: "/images/home/herolivingroom1.jpeg",
+    src: "/images/home/herolivingroom1.webp",
     alt: "Modern living room with grey sofa",
     width: 1920,
     height: 1080
   },
   {
-    src: "/images/home/herolivingroom2.jpeg",
+    src: "/images/home/herolivingroom2.webp",
     alt: "Elegant living room setup",
     width: 1920,
     height: 1080
   },
   {
-    src: "/images/home/herolivingroom3.jpeg",
+    src: "/images/home/herolivingroom3.webp",
     alt: "Modern living room with TV",
     width: 1920,
     height: 1080

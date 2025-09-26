@@ -12,7 +12,7 @@ export function SpecialOffer() {
           <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] order-1 rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up">
             <Link href="/packs/trio" className="block group">
               <Image
-                src="/images/home/special-offer.jpeg"
+                src="/images/home/special-offer.webp"
                 alt="Modern Interior"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"

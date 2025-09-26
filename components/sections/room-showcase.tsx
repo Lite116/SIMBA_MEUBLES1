@@ -6,19 +6,19 @@ const rooms = [
   {
     title: 'Salon',
     description: 'Un espace de vie élégant et confortable',
-    image: "/images/home/room-showcase1.jpeg",
+    image: "/images/home/room-showcase1.webp",
     link: '/packs/duo',
   },
   {
     title: 'Salle à manger',
     description: 'Le lieu de partage par excellence',
-    image: "/images/home/room-showcase2.jpeg",
+    image: "/images/home/room-showcase2.webp",
     link: '/packs/duo',
   },
   {
     title: 'Chambre',
     description: 'Votre havre de paix personnel',
-    image: '/images/home/room-showcase3.jpeg',
+    image: '/images/home/room-showcase3.webp',
     link: '/packs/trio',
   },
 ];

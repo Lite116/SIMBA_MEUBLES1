@@ -71,7 +71,7 @@ export function About() {
               style={{ animationDelay: '0.2s' }}
             >
               <Image
-                src="/images/home/about.jpeg"
+                src="/images/home/about.webp"
                 alt="Notre équipe"
                 fill
                 className="object-cover"
