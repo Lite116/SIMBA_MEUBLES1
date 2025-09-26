@@ -26,9 +26,7 @@ export function About() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Content Section */}
             <div 
-              className="max-w-xl mx-auto lg:mx-0"
-              data-aos="fade-up"
-              data-aos-duration="1000"
+              className="max-w-xl mx-auto lg:mx-0 animate-fade-in-up"
             >
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-6">
                 Qui sommes-nous ?
@@ -44,10 +42,8 @@ export function About() {
                 {values.map((value, index) => (
                   <div 
                     key={value.title}
-                    className="flex gap-4"
-                    data-aos="fade-up"
-                    data-aos-duration="800"
-                    data-aos-delay={index * 100}
+                    className="flex gap-4 animate-fade-in-up"
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white flex items-center justify-center">
                       <Check className="h-6 w-6 text-[#FE6022]" />
@@ -60,11 +56,7 @@ export function About() {
                 ))}
               </div>
 
-              <div 
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay="400"
-              >
+              <div className="animate-fade-in-up">
                 <Button asChild size="lg" className="w-full sm:w-auto">
                   <Link href="/packs">
                     Découvrir nos packs
@@ -75,10 +67,8 @@ export function About() {
 
             {/* Image Section */}
             <div 
-              className="relative aspect-[4/3] lg:aspect-auto lg:h-[600px] rounded-2xl overflow-hidden"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="200"
+              className="relative aspect-[4/3] lg:aspect-auto lg:h-[600px] rounded-2xl overflow-hidden animate-fade-in-up"
+              style={{ animationDelay: '0.2s' }}
             >
               <Image
                 src="/images/home/about.jpeg"
@@ -86,6 +76,7 @@ export function About() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px"
+                quality={85}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>

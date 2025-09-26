@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { Header } from '@/components/layout/header';
 import { ContactForm } from '@/components/contact/contact-form';
 import { ContactInfo } from '@/components/contact/contact-info';
 import { ContactMap } from '@/components/contact/contact-map';
@@ -13,10 +12,12 @@ export const metadata: Metadata = {
   },
 };
 
+// Force static generation for better performance
+export const dynamic = 'force-static';
+
 export default function ContactPage() {
   return (
     <main>
-      <Header />
       <div className="pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12 lg:mb-16">

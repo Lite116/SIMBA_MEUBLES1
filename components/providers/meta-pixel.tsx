@@ -1,5 +1,3 @@
-'use client';
-
 import Script from 'next/script';
 
 export function MetaPixel() {
@@ -7,7 +5,7 @@ export function MetaPixel() {
     <>
       <Script
         id="meta-pixel"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -24,6 +22,7 @@ export function MetaPixel() {
         }}
       />
       <noscript>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           height="1"
           width="1"

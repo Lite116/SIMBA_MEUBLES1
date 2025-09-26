@@ -1,4 +1,3 @@
-import { Header } from '@/components/layout/header';
 import { Hero } from '@/components/sections/hero';
 import { SpecialOffer } from '@/components/sections/special-offer';
 import { About } from '@/components/sections/about';
@@ -10,10 +9,12 @@ import { FAQ } from '@/components/sections/faq';
 import { WhatsAppBanner } from '@/components/sections/whatsapp-banner';
 import { SuccessAlert } from '@/components/ui/success-alert';
 
+// Force static generation for better performance
+export const dynamic = 'force-static';
+
 export default function Home() {
   return (
     <main>
-      <Header />
       <SuccessAlert />
       <Hero />
       <SpecialOffer />

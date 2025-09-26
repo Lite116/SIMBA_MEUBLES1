@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -27,7 +28,6 @@
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.5.0",
-    "aos": "^2.3.4",
     "autoprefixer": "10.4.15",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -49,7 +49,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7",
-    "@types/iban": "^0.0.35"
+    "@types/iban": "^0.0.35",
+    "sharp": "^0.33.5"
   }
 }

@@ -16,6 +16,8 @@ export function WhatsAppBanner() {
           alt="Contact background"
           fill
           className="object-cover brightness-[0.3]"
+          sizes="100vw"
+          quality={85}
         />
         <div className="absolute inset-0 bg-[#FE6022]/30 mix-blend-multiply" />
       </div>
@@ -23,11 +25,7 @@ export function WhatsAppBanner() {
       {/* Content */}
       <div className="relative z-10 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div 
-            className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 animate-fade-in-up">
             <div className="text-center sm:text-left">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
                 Une question ? Contactez-nous !

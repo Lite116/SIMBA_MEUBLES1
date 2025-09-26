@@ -9,11 +9,7 @@ export function SpecialOffer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image Section */}
-          <div
-            className="relative h-[300px] sm:h-[400px] lg:h-[500px] order-1 rounded-2xl shadow-2xl overflow-hidden"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] order-1 rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up">
             <Link href="/packs/trio" className="block group">
               <Image
                 src="/images/home/special-offer.jpeg"
@@ -21,18 +17,15 @@ export function SpecialOffer() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 800px"
+                quality={85}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent transition-colors duration-300 group-hover:from-black/40" />
             </Link>
           </div>
 
           {/* Content Section */}
-          <div
-            className="lg:pl-8 order-2"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
+          <div className="lg:pl-8 order-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <div className="text-center lg:text-left mb-8">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
                 Des espaces qui vous ressemblent
@@ -44,12 +37,7 @@ export function SpecialOffer() {
             </div>
 
             <div className="space-y-4 mb-8">
-              <div
-                className="bg-gray-50 p-6 rounded-xl"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay="300"
-              >
+              <div className="bg-gray-50 p-6 rounded-xl animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-[#FE6022]/10 rounded-lg shrink-0">
                     <CreditCard className="h-6 w-6 text-[#FE6022]" />
@@ -61,12 +49,7 @@ export function SpecialOffer() {
                 </div>
               </div>
 
-              <div
-                className="bg-gray-50 p-6 rounded-xl"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay="400"
-              >
+              <div className="bg-gray-50 p-6 rounded-xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-[#FE6022]/10 rounded-lg shrink-0">
                     <Palette className="h-6 w-6 text-[#FE6022]" />
@@ -83,12 +66,7 @@ export function SpecialOffer() {
               </div>
             </div>
 
-            <div
-              className="text-center lg:text-left space-y-6"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="600"
-            >
+            <div className="text-center lg:text-left space-y-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
               <div>
                 <div className="flex items-baseline justify-center lg:justify-start gap-2">
                   <p className="text-4xl sm:text-5xl font-bold text-[#FE6022]">
