@@ -9,6 +9,7 @@ import { CookieBanner } from '@/components/cookie/cookie-banner';
 import { SocialButtons } from '@/components/ui/social-buttons';
 import { MetaPixel } from '@/components/providers/meta-pixel';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Header } from '@/components/layout/header';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -52,6 +53,7 @@ export default function RootLayout({
           <SocialButtons />
           <MetaPixel />
           <Analytics />
+          <SpeedInsights />
         </PackProvider>
       </body>
     </html>
