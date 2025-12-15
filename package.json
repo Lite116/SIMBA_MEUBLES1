@@ -37,7 +37,7 @@
     "eslint-config-next": "13.5.1",
     "iban": "^0.0.14",
     "lucide-react": "^0.446.0",
-    "next": "^15.5.0",
+    "next": "15.5.9",
     "postcss": "8.4.30",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
