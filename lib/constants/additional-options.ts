@@ -7,9 +7,9 @@ export const ADDITIONAL_OPTIONS: Record<string, AdditionalOptionCategory> = {
       {
         id: 'livraison-standard',
         name: 'Livraison Standard',
-        description: 'Livraison depose au rez-de-chaussée',
+        description: 'Livraison déposée au rez-de-chaussée - Délai : 10 à 12 semaines',
         image: '',
-        price: 90,
+        price: 150, // 5€ x 30 mois
         category: 'delivery',
       }
     ]
