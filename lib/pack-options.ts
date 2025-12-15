@@ -95,6 +95,20 @@ export const ROOM_OPTIONS: RoomOptions = {
       price: 0,
       available: false,
     },
+    {
+      id: 'salon-14',
+      name: 'Salon 14',
+      description: 'Salon supplémentaire standard',
+      image: '/images/salons/s15.webp',
+      price: 0,
+    },
+    {
+      id: 'salon-15',
+      name: 'Salon 15',
+      description: 'Salon supplémentaire standard',
+      image: '/images/salons/s16.webp',
+      price: 0,
+    },
   ],
   'salle-a-manger': [
     {
@@ -156,12 +170,21 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Chambre avec espace de couchage et rangement',
       image: '/images/chambres/chambre3.webp',
       price: 0,
+      available: false,
     },
     {
       id: 'chambre-4',
       name: 'Chambre 4',
       description: 'Chambre fonctionnelle et pratique',
       image: '/images/chambres/chambre4.webp',
+      price: 0,
+      available: false,
+    },
+    {
+      id: 'chambre-5',
+      name: 'Chambre 5',
+      description: 'Chambre confortable et moderne',
+      image: '/images/chambres/chambre5.webp',
       price: 0,
     },
   ]
