@@ -50,6 +50,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s8.webp',
       price: 0,
+      available: false,
     },
     {
       id: 'salon-8',
