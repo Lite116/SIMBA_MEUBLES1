@@ -5,18 +5,14 @@ export function Footer() {
   return (
     <footer className="bg-[#FEEDEC] text-gray-700">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <div className="text-lg text-center italic text-[#FE6022] mb-8">
-          Emprunter de l&apos;argent coûte aussi de l&apos;argent.
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           <div>
             <h3 className="font-bold mb-4">
               <span className="text-[#FE6022]">SIMBA</span> MEUBLES
             </h3>
             <p className="text-lg mb-4">
-  Solutions complètes d&apos;ameublement avec financement à 0% sur 30 mois.
-</p>
+              Solutions complètes d&apos;ameublement avec TAEG 0 % sur 30 mois.
+            </p>
 <p className="text-sm mb-4">
   12 Rue de tirlemont<br />
   4280 Hannut
@@ -120,7 +116,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 mt-8 pt-8 text-sm text-center">
+        <div className="border-t border-gray-200 mt-8 pt-8 text-sm text-center space-y-1">
+          <p>Meubles Family SRL – BE0679.866.565 • Intermédiaire de crédit à titre accessoire</p>
           <p>© {new Date().getFullYear()} Simba Meubles. Tous droits réservés.</p>
         </div>
       </div>

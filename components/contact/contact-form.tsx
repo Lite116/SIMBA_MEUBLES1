@@ -12,6 +12,7 @@ import { Spinner } from '@/components/ui/spinner';
 import { formSchema, FormData } from '@/lib/types/form';
 import { sendToMakeWebhook } from '@/lib/utils/webhook';
 import { PackSummary } from './form/pack-summary';
+import { CreditLegalNotice } from '@/components/CreditLegalNotice';
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -77,6 +78,7 @@ export function ContactForm() {
   return (
     <div className="space-y-8">
       <PackSummary />
+      <CreditLegalNotice />
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <FormFields register={register} errors={errors}  control={control} />

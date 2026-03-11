@@ -73,12 +73,12 @@ export function Hero() {
           <div 
             className="mx-auto max-w-2xl text-center text-white animate-fade-in-up"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mt-12 animate-fade-in-up-delay-1">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mt-12 animate-fade-in-up-delay-1">
   MEUBLEZ-VOUS <span className="text-[#FE6022]">PAS CHER</span>
 </h1>
 
             <p 
-              className="mt-6 text-base sm:text-lg lg:text-xl leading-relaxed text-gray-200 animate-fade-in-up-delay-2"
+              className="mt-6 text-sm sm:text-base lg:text-lg leading-relaxed text-gray-200 animate-fade-in-up-delay-2"
             >
               95€ en 30 mois, 0€ d&#39;intérêt et 0€ d&#39;acompte
             </p>

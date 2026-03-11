@@ -5,6 +5,7 @@ import { Pack } from '@/lib/types';
 import { AdditionalSelection } from '@/lib/types/additional-options';
 import { Button } from '@/components/ui/button';
 import { ADDITIONAL_OPTIONS } from '@/lib/constants/additional-options';
+import { CreditLegalNotice } from '@/components/CreditLegalNotice';
 
 interface SummaryTotalProps {
   pack: Pack;
@@ -23,10 +24,7 @@ export function SummaryTotal({ pack, additionalSelections }: SummaryTotalProps) 
   const totalMonthly = Math.round((baseMonthly + (additionalTotal / pack.duration)) * 100) / 100;
 
   return (
-    <div className="bg-gray-50 p-6 rounded-lg">
-      <div className="text-lg text-center italic text-[#FE6022] mb-8">
-        Emprunter de l&apos;argent coûte aussi de l&apos;argent.
-      </div>
+    <div className="bg-gray-50 p-6 rounded-lg space-y-4">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-lg font-semibold">Total mensuel</h3>
         <p className="text-2xl font-bold text-[#FE6022]">{totalMonthly}€/mois</p>
@@ -41,6 +39,8 @@ export function SummaryTotal({ pack, additionalSelections }: SummaryTotalProps) 
           </Link>
         </Button>
       </div>
+
+      <CreditLegalNotice />
     </div>
   );
 }

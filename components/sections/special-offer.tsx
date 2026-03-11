@@ -1,7 +1,10 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
-import { Palette, CreditCard, Clock } from "lucide-react";
+import { Palette, CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CreditLegalNotice } from "@/components/CreditLegalNotice";
 
 export function SpecialOffer() {
   return (
@@ -82,6 +85,11 @@ export function SpecialOffer() {
                 <Link href="/packs/trio">Je découvre le Pack Trio</Link>
               </Button>
             </div>
+          </div>
+
+          {/* Legal block full width under the offer */}
+          <div className="lg:col-span-2 mt-6">
+            <CreditLegalNotice />
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import {
 
 const faqs = [
   {
-    question: "Comment fonctionne le financement à 0% ?",
+    question: "Comment fonctionne le TAEG 0 % ?",
     answer: "Notre financement vous permet d'étaler votre paiement sur 30 mois sans aucun frais ni intérêts. Par exemple, pour un Pack Trio à 2850€, vous ne payez que 95€ par mois."
   },
   {

@@ -11,6 +11,7 @@ import { ADDITIONAL_OPTIONS } from '@/lib/constants/additional-options';
 import { Check } from 'lucide-react';
 import { ContactForm } from '@/components/contact/contact-form';
 import { usePackContext } from '@/lib/contexts/pack-context';
+import { CreditLegalNotice } from '@/components/CreditLegalNotice';
 
 interface PackSummaryProps {
   pack: Pack;
@@ -112,6 +113,8 @@ export function PackSummary({
           </Button>
         </div>
       </div>
+
+      <CreditLegalNotice />
 
       {/* Contact Form */}
       <div className="bg-white p-6 rounded-lg border">

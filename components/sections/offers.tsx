@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SITE_CONFIG } from '@/lib/constants';
+import { CreditLegalNotice } from '@/components/CreditLegalNotice';
 
 export function Offers() {
   return (
@@ -28,7 +29,7 @@ export function Offers() {
             Dans le pack vous avez 1 salon, 1 chambre (lit, garde robe, 2 chevets) et 1 salle à manger (bahut, table, vitrine) 🤩
           </p>
           <p className="mt-2 text-lg font-medium text-[#FE6022]">
-            C&apos;est sans acompte, 95€/30 mois à 0%
+            C&apos;est sans acompte, 95€/30 mois, TAEG 0 %
           </p>
         </div>
         
@@ -88,6 +89,10 @@ export function Offers() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12">
+          <CreditLegalNotice />
         </div>
       </div>
     </section>

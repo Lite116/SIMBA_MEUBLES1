@@ -7,6 +7,7 @@ import { AdditionalSelection } from '@/lib/types/additional-options';
 import { AdditionalOptions } from './additional-options';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+import { CreditLegalNotice } from '@/components/CreditLegalNotice';
 
 
 interface AdditionalOptionsPageProps {
@@ -56,6 +57,8 @@ export function AdditionalOptionsPage({ pack, selections }: AdditionalOptionsPag
         duration={pack.duration}
         packType={packType}
       />
+
+      <CreditLegalNotice />
 
       <div className="flex justify-end pt-8">
         <Button onClick={handleNext} size="lg">

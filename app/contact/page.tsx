@@ -4,11 +4,11 @@ import { ContactInfo } from '@/components/contact/contact-info';
 import { ContactMap } from '@/components/contact/contact-map';
 
 export const metadata: Metadata = {
-  title: 'Contact - Simba Meubles | Financement meuble à 0%',
-  description: 'Contactez Simba Meubles pour toute question sur nos packs meubles et notre financement à 0%. Service client disponible du lundi au samedi de 9h à 19h.',
+  title: 'Contact - Simba Meubles | Financement meuble TAEG 0 %',
+  description: 'Contactez Simba Meubles pour toute question sur nos packs meubles et notre TAEG 0 %. Service client disponible du lundi au samedi de 9h à 19h.',
   openGraph: {
-    title: 'Contact - Simba Meubles | Financement meuble à 0%',
-    description: 'Contactez Simba Meuble pour toute question sur nos packs meubles et notre financement à 0%. Service client disponible du lundi au samedi de 9h à 19h.',
+    title: 'Contact - Simba Meubles | Financement meuble TAEG 0 %',
+    description: 'Contactez Simba Meuble pour toute question sur nos packs meubles et notre TAEG 0 %. Service client disponible du lundi au samedi de 9h à 19h.',
   },
 };
 
