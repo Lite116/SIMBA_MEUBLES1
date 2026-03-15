@@ -47,6 +47,7 @@ export function SocialButtons() {
           rel="noopener noreferrer"
           className={`${social.bgColor} text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 flex items-center justify-center ${social.className}`}
           aria-label={`Nous suivre sur ${social.name}`}
+          data-gtm={`click-${social.name.toLowerCase()}`}
         >
           <social.icon className="w-8 h-8 sm:w-6 sm:h-6" />
         </a>

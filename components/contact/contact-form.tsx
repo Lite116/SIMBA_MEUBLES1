@@ -60,7 +60,7 @@ export function ContactForm() {
       clearPackData();
       
       setTimeout(() => {
-        router.push('/');
+        router.push('/?form=success');
       }, 3000);
     } catch (error) {
       console.error('Error submitting form:', error);

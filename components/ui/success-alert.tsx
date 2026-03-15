@@ -19,7 +19,7 @@ export function SuccessAlert() {
   if (!show) return null;
 
   return (
-    <Alert className="fixed bottom-4 right-4 w-auto max-w-md z-50 bg-green-50 border-green-200 text-green-800">
+    <Alert className="fixed bottom-4 right-4 w-auto max-w-md z-50 bg-green-50 border-green-200 text-green-800" data-gtm="form-success-alert">
       <div className="flex items-center justify-between">
         <AlertDescription className="text-sm">
           Votre demande a bien été envoyée ! Nous vous recontacterons rapidement.
