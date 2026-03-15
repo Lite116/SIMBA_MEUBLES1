@@ -9,7 +9,7 @@ export const ADDITIONAL_OPTIONS: Record<string, AdditionalOptionCategory> = {
         name: 'Livraison Standard',
         description: 'Livraison depose au rez-de-chaussée',
         image: '',
-        price: 90,
+        price: 150,
         category: 'delivery',
       }
     ]
