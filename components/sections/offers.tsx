@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Check } from 'lucide-react';
+import { pushGtmEvent } from '@/lib/gtm';
 import { Button } from '@/components/ui/button';
 import { SITE_CONFIG } from '@/lib/constants';
 import { CreditLegalNotice } from '@/components/CreditLegalNotice';
@@ -82,7 +83,12 @@ export function Offers() {
                 </ul>
 
                 <Button asChild className="w-full">
-                  <Link href={`/packs/${key}`}>
+                  <Link
+                    href={`/packs/${key}`}
+                    onClick={() =>
+                      pushGtmEvent('pack_choice_click', { pack_id: key })
+                    }
+                  >
                     Choisir ce pack
                   </Link>
                 </Button>

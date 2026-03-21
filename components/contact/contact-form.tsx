@@ -13,6 +13,7 @@ import { formSchema, FormData } from '@/lib/types/form';
 import { sendToMakeWebhook } from '@/lib/utils/webhook';
 import { PackSummary } from './form/pack-summary';
 import { CreditLegalNotice } from '@/components/CreditLegalNotice';
+import { pushGtmEvent } from '@/lib/gtm';
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,6 +49,10 @@ export function ContactForm() {
         roomSelections,
         additionalSelections
       );
+
+      pushGtmEvent('credit_form_success', {
+        pack_name: selectedPack?.name,
+      });
 
       toast({
         title: 'Demande envoyée !',

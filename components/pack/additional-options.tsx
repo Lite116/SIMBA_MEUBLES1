@@ -2,6 +2,7 @@
 
 import { Check } from 'lucide-react';
 import { AdditionalSelection } from '@/lib/types/additional-options';
+import { pushGtmEvent } from '@/lib/gtm';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ADDITIONAL_OPTIONS } from '@/lib/constants/additional-options';
@@ -24,28 +25,41 @@ export function AdditionalOptions({
   const handleQuantityChange = (optionId: string, quantity: number, isDeliveryOption: boolean = false) => {
     if (quantity === 0) {
       onUpdate(selections.filter(s => s.id !== optionId));
-    } else {
-      // Vérifier la limite de 10 pour les options non-livraison
-      if (!isDeliveryOption) {
-        const totalNonDeliveryQuantity = selections
-          .filter(s => !delivery?.items.some(item => item.id === s.id))
-          .reduce((sum, s) => sum + s.quantity, 0);
+      pushGtmEvent('pack_additional_option', {
+        option_id: optionId,
+        quantity: 0,
+        is_delivery: isDeliveryOption,
+        pack_type: packType,
+      });
+      return;
+    }
 
-        if (quantity > 0 && (totalNonDeliveryQuantity >= 10)) {
-          alert("Vous ne pouvez pas sélectionner plus de 10 options au total.");
-          return;
-        }
-      }
+    // Vérifier la limite de 10 pour les options non-livraison
+    if (!isDeliveryOption) {
+      const totalNonDeliveryQuantity = selections
+        .filter(s => !delivery?.items.some(item => item.id === s.id))
+        .reduce((sum, s) => sum + s.quantity, 0);
 
-      const existingIndex = selections.findIndex(s => s.id === optionId);
-      if (existingIndex >= 0) {
-        const newSelections = [...selections];
-        newSelections[existingIndex] = { id: optionId, quantity };
-        onUpdate(newSelections);
-      } else {
-        onUpdate([...selections, { id: optionId, quantity }]);
+      if (quantity > 0 && (totalNonDeliveryQuantity >= 10)) {
+        alert("Vous ne pouvez pas sélectionner plus de 10 options au total.");
+        return;
       }
     }
+
+    const existingIndex = selections.findIndex(s => s.id === optionId);
+    if (existingIndex >= 0) {
+      const newSelections = [...selections];
+      newSelections[existingIndex] = { id: optionId, quantity };
+      onUpdate(newSelections);
+    } else {
+      onUpdate([...selections, { id: optionId, quantity }]);
+    }
+    pushGtmEvent('pack_additional_option', {
+      option_id: optionId,
+      quantity,
+      is_delivery: isDeliveryOption,
+      pack_type: packType,
+    });
   };
 
   const getQuantity = (optionId: string) => 

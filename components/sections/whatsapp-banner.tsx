@@ -1,7 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { WhatsappIcon } from '@/components/ui/icons/whatsapp-icon';
 import { Button } from '@/components/ui/button';
+import { pushGtmEvent } from '@/lib/gtm';
 
 export function WhatsAppBanner() {
   const message = encodeURIComponent("Bonjour, je souhaiterais avoir plus d'informations");
@@ -41,7 +44,15 @@ export function WhatsAppBanner() {
               variant="secondary"
               className="group relative pl-12 bg-white hover:bg-white/90 text-gray-900"
             >
-              <Link href={whatsappLink} target="_blank" rel="noopener noreferrer" data-gtm="click-whatsapp-banner">
+              <Link
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-gtm="click-whatsapp-banner"
+                onClick={() =>
+                  pushGtmEvent('whatsapp_click', { location: 'banner' })
+                }
+              >
                 <span className="absolute left-4">
                   <WhatsappIcon className="w-5 h-5 text-[#25D366] group-hover:scale-110 transition-transform" />
                 </span>

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { PackOption, Room } from '@/lib/types';
+import { pushGtmEvent } from '@/lib/gtm';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -87,8 +88,24 @@ export function RoomSelector({
                 {!('available' in option) || option.available !== false ? (
                   <QuantityControls
                     quantity={quantity}
-                    onIncrease={() => onSelect(option.id, quantity + 1)}
-                    onDecrease={() => onSelect(option.id, quantity - 1)}
+                    onIncrease={() => {
+                      pushGtmEvent('pack_room_option', {
+                        option_id: option.id,
+                        option_name: option.name,
+                        room_type: roomType,
+                        action: 'increase',
+                      });
+                      onSelect(option.id, quantity + 1);
+                    }}
+                    onDecrease={() => {
+                      pushGtmEvent('pack_room_option', {
+                        option_id: option.id,
+                        option_name: option.name,
+                        room_type: roomType,
+                        action: 'decrease',
+                      });
+                      onSelect(option.id, quantity - 1);
+                    }}
                     maxQuantity={Math.min(maxSelections, quantity + remainingSelections)}
                   />
                 ) : (

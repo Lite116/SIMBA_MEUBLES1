@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
+import { GtmTrackedFacebookLink } from '@/components/gtm-tracked-facebook';
 
 export function Footer() {
   return (
@@ -22,14 +23,13 @@ export function Footer() {
 </p>
 
             <div className="flex space-x-4 mt-4">
-              <Link 
-                href="https://www.facebook.com/simbameubles/" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <GtmTrackedFacebookLink
+                href="https://www.facebook.com/simbameubles/"
                 className="hover:text-[#FE6022] transition-colors"
+                location="footer"
               >
                 <Facebook className="h-5 w-5" />
-              </Link>
+              </GtmTrackedFacebookLink>
               <Link 
                 href="https://www.instagram.com/simbameubles/" 
                 target="_blank" 
