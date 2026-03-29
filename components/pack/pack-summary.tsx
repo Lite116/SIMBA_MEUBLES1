@@ -55,7 +55,9 @@ export function PackSummary({
                 <h3 className="text-lg font-semibold mb-2">
                   {selection.type.replace(/-/g, ' ')} - {option.name}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">{option.description}</p>
+                <p className="text-gray-600 text-sm mb-4 whitespace-pre-line">
+                  {option.description}
+                </p>
               </CardContent>
             </Card>
           );

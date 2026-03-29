@@ -32,7 +32,9 @@ export function SelectedRooms({ selections }: SelectedRoomsProps) {
                     <h3 className="text-lg font-semibold mb-2">
                       {selection.type.replace(/-/g, ' ')} - {option.name}
                     </h3>
-                    <p className="text-gray-600 text-sm">{option.description}</p>
+                    <p className="text-gray-600 text-sm whitespace-pre-line">
+                      {option.description}
+                    </p>
                   </div>
                 </div>
               </CardContent>

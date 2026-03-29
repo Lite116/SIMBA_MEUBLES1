@@ -81,7 +81,7 @@ export function RoomSelector({
                   isSelected ? "bg-black/10" : "bg-black/0 group-hover:bg-black/5"
                 )} />
               </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
                 {option.description}
               </p>
               <div className="pt-2 flex justify-center">
