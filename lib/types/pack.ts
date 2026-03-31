@@ -15,7 +15,10 @@ export interface PackOption {
   description: string;
   image: string;
   price: number;
+  /** Si false : carte grisée + « Non disponible » */
   available?: boolean;
+  /** Si true : l’option n’apparaît pas du tout dans les sélecteurs (récap / URLs inchangés). */
+  hidden?: boolean;
 }
 
 export type RoomOptions = Record<Room, PackOption[]>;

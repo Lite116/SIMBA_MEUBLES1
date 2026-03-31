@@ -1,18 +1,26 @@
-import { RoomOptions, PackOption } from './types/index';
+import { RoomOptions, PackOption, Room } from './types/index';
+
+/**
+ * Options visibles dans les sélecteurs (salon / SAM / chambre).
+ * Les entrées avec `hidden: true` restent dans `ROOM_OPTIONS` pour récapitulatif et anciens liens.
+ */
+export function getVisibleRoomOptions(room: Room): PackOption[] {
+  return ROOM_OPTIONS[room].filter((opt) => !opt.hidden);
+}
 
 export const ROOM_OPTIONS: RoomOptions = {
   salon: [
     {
       id: 'salon-1',
-      name: 'Salon 1',
+      name: 'Salon 1 (hors catalogue)',
       description: 'Salon avec mobilier de base',
       image: '/images/salons/s1.webp',
       price: 0,
-      available: false,
+      hidden: true,
     },
     {
       id: 'salon-2',
-      name: 'Salon 2',
+      name: 'Salon 1',
       description:
         '237 cm x 142 cm. Lit et coffre dans partie centrale. Tissu monolith noir. Méridienne réversible.',
       image: '/images/salons/s2.webp',
@@ -20,7 +28,7 @@ export const ROOM_OPTIONS: RoomOptions = {
     },
     {
       id: 'salon-3',
-      name: 'Salon 3',
+      name: 'Salon 2',
       description:
         '312 cm x 142 cm. Lit et coffre dans la partie centrale. Tissu velours côtelé.',
       image: '/images/salons/s4.webp',
@@ -36,7 +44,7 @@ export const ROOM_OPTIONS: RoomOptions = {
     },
     {
       id: 'salon-5',
-      name: 'Salon 5',
+      name: 'Salon 4',
       description:
         '312 cm x 142 cm. Lit et coffre dans la partie centrale. Tissu monolith noir.',
       image: '/images/salons/s6.webp',
@@ -48,19 +56,19 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s7.webp',
       price: 0,
-      available: false,
+      hidden: true,
     },
     {
       id: 'salon-7',
-      name: 'Salon 7',
+      name: 'Salon 7 (hors catalogue)',
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s8.webp',
       price: 0,
-      available: false,
+      hidden: true,
     },
     {
       id: 'salon-8',
-      name: 'Salon 8',
+      name: 'Salon 5',
       description:
         '320 cm x 160 cm. Simili noir et tissu gris. Lit et coffre dans partie centrale.',
       image: '/images/salons/s9.webp',
@@ -72,19 +80,19 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s10.webp',
       price: 0,
-      available: false,
+      hidden: true,
     },
     {
       id: 'salon-10',
-      name: 'Salon 10',
+      name: 'Salon 10 (hors catalogue)',
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s11.webp',
       price: 0,
-      available: false,
+      hidden: true,
     },
     {
       id: 'salon-11',
-      name: 'Salon 11',
+      name: 'Salon 6',
       description:
         '240 cm x 160 cm. Lit et coffre dans la partie centrale. Méridienne réversible.',
       image: '/images/salons/s12.webp',
@@ -92,7 +100,7 @@ export const ROOM_OPTIONS: RoomOptions = {
     },
     {
       id: 'salon-12',
-      name: 'Salon 12',
+      name: 'Salon 7',
       description:
         '237 cm x 142 cm. Méridienne réversible. Lit et coffre dans partie centrale, tissu velours côtelé.',
       image: '/images/salons/s13.webp',
@@ -100,11 +108,11 @@ export const ROOM_OPTIONS: RoomOptions = {
     },
     {
       id: 'salon-13',
-      name: 'Salon 13',
+      name: 'Salon 13 (hors catalogue)',
       description: 'Salon supplémentaire standard',
       image: '/images/salons/s14.webp',
       price: 0,
-      available: false,
+      hidden: true,
     },
     {
       id: 'salon-14',
@@ -116,7 +124,7 @@ export const ROOM_OPTIONS: RoomOptions = {
     },
     {
       id: 'salon-15',
-      name: 'Salon 15',
+      name: 'Salon 9',
       description:
         '215 cm x 127 cm avec lit dans la partie centrale et coffre dans la méridienne. Tissu beige lisse.',
       image: '/images/salons/s16.webp',
@@ -155,11 +163,11 @@ export const ROOM_OPTIONS: RoomOptions = {
         'Ensemble table, bahut et vitrine — modèle actuellement non disponible.',
       image: '/images/salle-a-manger/sam4.webp',
       price: 0,
-      available: false,
+      hidden: true,
     },
     {
       id: 'sam-5',
-      name: 'Salle à Manger 5',
+      name: 'Salle à Manger 4',
       description:
         'Table 180 cm x 90 cm. Bahut 213 cm.\nVitrine 112 cm.',
       image: '/images/salle-a-manger/sam5.webp',
@@ -180,27 +188,26 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Lit 160 cm. Garde Robe 215 cm x 210 cm H.',
       image: '/images/chambres/chambre2.webp',
       price: 0,
-      //available: false,
     },
     {
       id: 'chambre-3',
-      name: 'Chambre 3',
+      name: 'Chambre 3 (hors catalogue)',
       description: 'Lit 160 cm. Garde Robe 225 cm.',
       image: '/images/chambres/chambre3.webp',
       price: 0,
-      available: false,
+      hidden: true,
     },
     {
       id: 'chambre-4',
-      name: 'Chambre 4',
+      name: 'Chambre 4 (hors catalogue)',
       description: 'Lit 160 cm. Garde Robe 240 cm x 215 cm H.',
       image: '/images/chambres/chambre4.webp',
       price: 0,
-      available: false,
+      hidden: true,
     },
     {
       id: 'chambre-5',
-      name: 'Chambre 5',
+      name: 'Chambre 3',
       description: 'Lit 160 cm. Garde Robe 250 cm x 218 cm H.',
       image: '/images/chambres/chambre5.webp',
       price: 0,

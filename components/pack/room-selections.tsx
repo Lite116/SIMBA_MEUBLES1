@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Pack, Room, PackOption } from '@/lib/types';
-import { ROOM_OPTIONS } from '@/lib/pack-options';
+import { ROOM_OPTIONS, getVisibleRoomOptions } from '@/lib/pack-options';
 import { RoomSelector } from './room-selector';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
@@ -85,7 +85,7 @@ export function RoomSelections({ pack }: RoomSelectionsProps) {
             </Badge>
           </div>
           <RoomSelector
-            options={ROOM_OPTIONS[room as Room]}
+            options={getVisibleRoomOptions(room as Room)}
             selectedIds={selections}
             onSelect={(id, quantity) => handleSelection(room as Room, id, quantity)}
             roomType={room as Room}

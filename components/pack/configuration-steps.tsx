@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Pack, Room } from '@/lib/types';
-import { ROOM_OPTIONS } from '@/lib/pack-options';
+import { getVisibleRoomOptions } from '@/lib/pack-options';
 import { RoomSelector } from './room-selector';
 import { AdditionalOptions } from './additional-options';
 import { Button } from '@/components/ui/button';
@@ -45,7 +45,7 @@ export function ConfigurationSteps({ pack }: ConfigurationStepsProps) {
         <div key={room} className="space-y-6">
           <h2 className="text-2xl font-semibold">Choisissez votre {room.replace(/-/g, ' ')}</h2>
           <RoomSelector
-            options={ROOM_OPTIONS[room]}
+            options={getVisibleRoomOptions(room as Room)}
             selectedIds={[selections[room as Room]]}
             onSelect={(id) => handleSelection(room as Room, id)}
             roomType={room}

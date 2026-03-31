@@ -15,6 +15,9 @@ export interface PackOption {
   description: string;
   image: string;
   price: number;
+  available?: boolean;
+  /** Si true : retirée du catalogue (non affichée dans les grilles de choix). */
+  hidden?: boolean;
 }
 
 export interface RoomSelection {
