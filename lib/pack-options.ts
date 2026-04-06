@@ -36,7 +36,7 @@ export const ROOM_OPTIONS: RoomOptions = {
     },
     {
       id: 'salon-4',
-      name: 'Salon 4',
+      name: 'Salon 3',
       description:
         '240 cm x 142 cm. Lit et coffre dans la partie centrale. Tissu velours côtelé. Méridienne réversible.',
       image: '/images/salons/s5.webp',
@@ -116,7 +116,7 @@ export const ROOM_OPTIONS: RoomOptions = {
     },
     {
       id: 'salon-14',
-      name: 'Salon 14',
+      name: 'Salon 8',
       description:
         '215 cm x 127 cm avec lit dans la partie centrale et coffre dans la méridienne. Tissu noir lisse.',
       image: '/images/salons/s15.webp',
@@ -191,11 +191,10 @@ export const ROOM_OPTIONS: RoomOptions = {
     },
     {
       id: 'chambre-3',
-      name: 'Chambre 3 (hors catalogue)',
+      name: 'Chambre 3',
       description: 'Lit 160 cm. Garde Robe 225 cm.',
       image: '/images/chambres/chambre3.webp',
       price: 0,
-      hidden: true,
     },
     {
       id: 'chambre-4',
@@ -207,7 +206,7 @@ export const ROOM_OPTIONS: RoomOptions = {
     },
     {
       id: 'chambre-5',
-      name: 'Chambre 3',
+      name: 'Chambre 4',
       description: 'Lit 160 cm. Garde Robe 250 cm x 218 cm H.',
       image: '/images/chambres/chambre5.webp',
       price: 0,
