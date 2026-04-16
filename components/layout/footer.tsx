@@ -68,11 +68,11 @@ export function Footer() {
                   Nos Packs
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link href="/contact" className="hover:text-[#FE6022] transition-colors">
-                  Contact
+                  Faire une simulation
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link href="/mentions-legales" className="hover:text-[#FE6022] transition-colors">
                   Mentions légales

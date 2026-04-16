@@ -1,6 +1,22 @@
 import { z } from 'zod';
 import IBAN from 'iban';
 
+/** Clés pack proposées à l’étape 1 (simulation rapide). */
+export const simulationPackKeys = z.enum(['duo', 'trio']);
+export type SimulationPackKey = z.infer<typeof simulationPackKeys>;
+
+/** Étape 1 — prénom, téléphone, choix du pack (conversion rapide). */
+export const creditFormStep1Schema = z.object({
+  firstName: z.string().min(2, 'Le prénom doit contenir au moins 2 caractères'),
+  phone: z
+    .string()
+    .min(8, 'Numéro trop court')
+    .transform((val) => val.replace(/\D/g, ''))
+    .refine((val) => /^\d{10,15}$/.test(val), 'Numéro de téléphone invalide'),
+  packKey: simulationPackKeys,
+});
+
+export type CreditFormStep1Data = z.infer<typeof creditFormStep1Schema>;
 
 export const formSchema = z.object({
   // Informations personnelles

@@ -15,7 +15,7 @@ export function Header() {
     { name: 'A Propos', href: '/#about' },
     { name: 'Comment ça marche', href: '/#process' },
     { name: 'FAQ', href: '/#faq' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Faire une simulation', href: '/contact' },
   ];
 
   const isActive = (path: string) => {

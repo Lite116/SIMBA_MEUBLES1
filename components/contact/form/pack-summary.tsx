@@ -5,9 +5,20 @@ import { usePackContext } from '@/lib/contexts/pack-context';
 import { ROOM_OPTIONS } from '@/lib/pack-options';
 import { ADDITIONAL_OPTIONS } from '@/lib/constants/additional-options';
 import { Room } from '@/lib/types';
+import { cn } from '@/lib/utils';
 
-export function PackSummary() {
-  const { selectedPack, roomSelections, additionalSelections, totalMonthly } = usePackContext();
+type PackSummaryProps = {
+  /** full: grille visuelle (ancien). compact: carte légère pour colonne latérale / mobile. */
+  variant?: 'full' | 'compact';
+  className?: string;
+};
+
+export function PackSummary({
+  variant = 'full',
+  className,
+}: PackSummaryProps) {
+  const { selectedPack, roomSelections, additionalSelections, totalMonthly } =
+    usePackContext();
 
   if (!selectedPack) return null;
 
@@ -22,14 +33,76 @@ export function PackSummary() {
     return null;
   };
 
+  if (variant === 'compact') {
+    const roomLines = roomSelections
+      .map((selection) => {
+        const option = getRoomOption(selection.type as Room, selection.optionId);
+        if (!option) return null;
+        return `${selection.type.replace(/-/g, ' ')} · ${option.name}`;
+      })
+      .filter(Boolean) as string[];
+
+    const addCount = additionalSelections.length;
+
+    return (
+      <div
+        className={cn(
+          'rounded-2xl border border-[#FE6022]/20 bg-gradient-to-b from-[#FE6022]/5 to-white',
+          'p-4 sm:p-5 shadow-sm',
+          className
+        )}
+      >
+        <p className="text-[10px] font-semibold uppercase tracking-wider text-[#FE6022] mb-1">
+          Votre sélection
+        </p>
+        <h3 className="text-base font-bold text-gray-900 leading-tight">
+          {selectedPack.name}
+        </h3>
+        <p className="mt-2 text-2xl font-bold text-[#FE6022] tabular-nums">
+          {totalMonthly}€
+          <span className="text-sm font-medium text-gray-600">/mois</span>
+        </p>
+        <p className="text-xs text-gray-600 mt-0.5">
+          pendant {selectedPack.duration} mois · TAEG 0 %
+        </p>
+
+        {roomLines.length > 0 && (
+          <ul className="mt-4 space-y-1.5 text-xs text-gray-700 border-t border-gray-100 pt-3">
+            {roomLines.map((line, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="text-[#FE6022] shrink-0" aria-hidden>
+                  ·
+                </span>
+                <span className="leading-snug">{line}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {addCount > 0 && (
+          <p className="mt-2 text-xs text-gray-600">
+            + {addCount} option{addCount > 1 ? 's' : ''} additionnelle
+            {addCount > 1 ? 's' : ''}
+          </p>
+        )}
+      </div>
+    );
+  }
+
   return (
-    <div className="bg-[#FE6022]/5 border border-[#FE6022]/20 p-4 sm:p-5 rounded-xl mb-6">
+    <div
+      className={cn(
+        'bg-[#FE6022]/5 border border-[#FE6022]/20 p-4 sm:p-5 rounded-xl mb-6',
+        className
+      )}
+    >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
         <h3 className="font-semibold text-sm sm:text-base">
           Récapitulatif de votre sélection
         </h3>
         <p className="text-xs sm:text-sm text-gray-700">
-          {selectedPack.name} • {totalMonthly}€/mois pendant {selectedPack.duration} mois
+          {selectedPack.name} • {totalMonthly}€/mois pendant {selectedPack.duration}{' '}
+          mois
         </p>
       </div>
 

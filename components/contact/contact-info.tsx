@@ -1,11 +1,16 @@
-import { Mail, Phone, Clock, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { GtmTrackedFacebookLink } from '@/components/gtm-tracked-facebook';
 
 export function ContactInfo() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 rounded-[2rem] border border-gray-100/90 bg-white/60 p-6 sm:p-8 shadow-sm backdrop-blur-sm lg:sticky lg:top-28">
       <div>
-        <h2 className="text-xl font-semibold mb-6">Informations de contact</h2>
+        <h2 className="text-lg font-semibold text-gray-900 mb-1">
+          Informations de contact
+        </h2>
+        <p className="text-sm text-gray-500 mb-6">
+          Une question avant de commencer ? Nous sommes là.
+        </p>
         <div className="space-y-6">
           <div className="flex items-start gap-4">
             <div className="w-10 h-10 rounded-lg bg-[#FE6022]/10 flex items-center justify-center flex-shrink-0">
@@ -58,8 +63,8 @@ export function ContactInfo() {
         </div>
       </div>
 
-      <div>
-        <h2 className="text-xl font-semibold mb-6">Suivez-nous</h2>
+      <div className="pt-2 border-t border-gray-100">
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">Suivez-nous</h2>
         <div className="flex gap-4">
           <GtmTrackedFacebookLink
             href="https://www.facebook.com/simbameubles/"
