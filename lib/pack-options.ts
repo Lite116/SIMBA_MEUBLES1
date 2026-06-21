@@ -41,6 +41,7 @@ export const ROOM_OPTIONS: RoomOptions = {
         '240 cm x 142 cm. Lit et coffre dans la partie centrale. Tissu velours côtelé. Méridienne réversible.',
       image: '/images/salons/s5.webp',
       price: 0,
+      hidden: true,
     },
     {
       id: 'salon-5',
@@ -172,6 +173,7 @@ export const ROOM_OPTIONS: RoomOptions = {
         'Table 180 cm x 90 cm. Bahut 213 cm.\nVitrine 112 cm.',
       image: '/images/salle-a-manger/sam5.webp',
       price: 0,
+      hidden: true,
     },
   ],
   chambre: [
@@ -181,6 +183,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Lit 160 cm. Garde Robe 220,5 cm x 203 cm H.',
       image: '/images/chambres/c1.webp',
       price: 0,
+      hidden: true,
     },
     {
       id: 'chambre-2',
@@ -188,6 +191,7 @@ export const ROOM_OPTIONS: RoomOptions = {
       description: 'Lit 160 cm. Garde Robe 215 cm x 210 cm H.',
       image: '/images/chambres/chambre2.webp',
       price: 0,
+      hidden: true,
     },
     {
       id: 'chambre-3',
@@ -209,6 +213,20 @@ export const ROOM_OPTIONS: RoomOptions = {
       name: 'Chambre 4',
       description: 'Lit 160 cm. Garde Robe 250 cm x 218 cm H.',
       image: '/images/chambres/chambre5.webp',
+      price: 0,
+    },
+    {
+      id: 'chambre-6',
+      name: 'Chambre 1',
+      description: 'Lit 160 cm. Garde robe 4 portes 218 cm.',
+      image: '/images/chambres/chambree1.webp',
+      price: 0,
+    },
+    {
+      id: 'chambre-7',
+      name: 'Chambre 2',
+      description: 'Lit 160 cm. Garde robe portes coulissantes 200 cm.',
+      image: '/images/chambres/chambree.webp',
       price: 0,
     },
   ]
