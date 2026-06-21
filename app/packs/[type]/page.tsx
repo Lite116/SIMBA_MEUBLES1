@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/header';
 import { RoomSelections } from '@/components/pack/room-selections';
 import { SITE_CONFIG } from '@/lib/constants';
+import { getAllVisibleRoomOptions } from '@/lib/pack-options';
 import { PackType } from '@/lib/types';
 import { generatePackTypeParams } from '@/lib/utils/route-utils';
 import { notFound } from 'next/navigation';
@@ -22,6 +23,8 @@ export default async function PackConfigPage({
     notFound();
   }
 
+  const visibleRoomOptions = getAllVisibleRoomOptions();
+
   return (
     <main>
       <Header />
@@ -30,7 +33,7 @@ export default async function PackConfigPage({
           <h1 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">
             Configuration de votre {pack.name}
           </h1>
-          <RoomSelections pack={pack} />
+          <RoomSelections pack={pack} visibleRoomOptions={visibleRoomOptions} />
         </div>
       </div>
     </main>

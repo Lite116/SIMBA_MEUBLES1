@@ -8,6 +8,15 @@ export function getVisibleRoomOptions(room: Room): PackOption[] {
   return ROOM_OPTIONS[room].filter((opt) => !opt.hidden);
 }
 
+const ROOMS: Room[] = ['salon', 'salle-a-manger', 'chambre'];
+
+/** Options visibles pour chaque pièce — à calculer côté serveur et passer en props. */
+export function getAllVisibleRoomOptions(): RoomOptions {
+  return Object.fromEntries(
+    ROOMS.map((room) => [room, getVisibleRoomOptions(room)])
+  ) as RoomOptions;
+}
+
 export const ROOM_OPTIONS: RoomOptions = {
   salon: [
     {
